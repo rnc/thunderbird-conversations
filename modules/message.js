@@ -1766,8 +1766,10 @@ function MessageFromGloda(aConversation, aGlodaMsg, aLateAttachments) {
   if ("mailingLists" in aGlodaMsg)
     this.mailingLists = aGlodaMsg.mailingLists.map(x => x.value);
 
-  this.isReplyListEnabled =
-    ("mailingLists" in aGlodaMsg) && aGlodaMsg.mailingLists.length;
+  if ( Prefs["disable_reply_list"] )
+    this.isReplyListEnabled = false
+  else
+    this.isReplyListEnabled = ("mailingLists" in aGlodaMsg) && aGlodaMsg.mailingLists.length;
   let seen = {};
   this.isReplyAllEnabled =
     [aGlodaMsg.from].concat(aGlodaMsg.to).concat(aGlodaMsg.cc).concat(aGlodaMsg.bcc)

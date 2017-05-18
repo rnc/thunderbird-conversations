@@ -54,6 +54,8 @@
 
   <setting title="&title.friendly_date;" desc="&option.no_friendly_date2;" pref="conversations.no_friendly_date" type="bool" />
 
+  <setting title="&title.disable_reply_list;" desc="&option.disable_reply_list;" pref="conversations.disable_reply_list" type="bool" />
+
   <setting title="&title.customize_keys;" desc="&desc.customize_keys;" type="control">
     <vbox>
       <vbox id="keysettings" hidden="true"/>

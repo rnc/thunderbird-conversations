@@ -54,6 +54,7 @@ function PrefManager() {
   loadDefaultPrefs();
 
   this.expand_who = prefsService.getIntPref("expand_who");
+  this.disable_reply_list = prefsService.getBoolPref("disable_reply_list");
   this.no_friendly_date = prefsService.getBoolPref("no_friendly_date");
   this.logging_enabled = prefsService.getBoolPref("logging_enabled");
   this.tweak_bodies = prefsService.getBoolPref("tweak_bodies");
@@ -100,6 +101,7 @@ PrefManager.prototype = {
       return;
 
     switch (aData) {
+      case "disable_reply_list":
       case "no_friendly_date":
       case "logging_enabled":
       case "tweak_bodies":
